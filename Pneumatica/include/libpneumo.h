@@ -5,3 +5,4 @@
 #define PNEUMO_VERSION_PATCH 1
 
 #include "_p_int.h"
+#include "_p_float.h"

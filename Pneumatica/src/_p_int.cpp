@@ -4,7 +4,7 @@
 #include <tuple>
 #include <cmath>
 
-int offsetRange = 10000;
+const int offsetRange = 10000;
 
 _p_int::_p_int(int value) {
 	offset = rand() % offsetRange;
@@ -28,34 +28,24 @@ _p_int::operator int() const {
 }
 
 _p_int& _p_int::operator=(int value) {
-	if (value == NULL) {
-		reset();
-		return *this;
-	}
-	else if (value == 0) {
+	if (value == 0) {
 		reset();
 		return *this;
 	}
 	else {
 		offset = rand() % offsetRange;
-		this->offset = offset;
 		this->value = value + offset;
 		return *this;
 	}
 }
 
 _p_int& _p_int::operator=(_p_int value) {
-	if (value == NULL) {
-		reset();
-		return *this;
-	}
-	else if((int)value == 0) {
+	if((int)value == 0) {
 		reset();
 		return *this;
 	}
 	else {
 		offset = rand() % offsetRange;
-		this->offset = offset;
 		this->value = (int)value + offset;
 		return *this;
 	}
@@ -63,136 +53,124 @@ _p_int& _p_int::operator=(_p_int value) {
 
 _p_int& _p_int::operator+(_p_int other) {
 	offset = rand() % offsetRange;
-	this->offset = offset;
-	this->value = (int)this + (int)other + offset;
+	value = (int)*this + (int)other + offset;
 	return *this;
 }
 
 _p_int& _p_int::operator+(int other) {
 	offset = rand() % offsetRange;
-	this->offset = offset;
-	this->value = (int)this + other + offset;
+	value = (int)*this + other + offset;
 	return *this;
 }
 
-_p_int& _p_int::operator++(int) {
+_p_int& _p_int::operator++() {
 	offset = rand() % offsetRange;
-	this->offset = offset;
-	int val = (int)this;
-	this->value = (val++) + offset;
+	int val = (int)*this;
+	value = (val++) + offset;
 	return *this;
 }
 
 _p_int& _p_int::operator-(_p_int other) {
 	offset = rand() % offsetRange;
-	this->offset = offset;
-	this->value = (int)this - (int)other + offset;
+	value = (int)*this - (int)other + offset;
 	return *this;
 }
 
 _p_int& _p_int::operator-(int other) {
 	offset = rand() % offsetRange;
-	this->offset = offset;
-	this->value = (int)this - other + offset;
+	value = (int)*this - other + offset;
 	return *this;
 }
 
-_p_int& _p_int::operator--(int) {
+_p_int& _p_int::operator--() {
 	offset = rand() % offsetRange;
-	this->offset = offset;
-	int val = (int)this;
-	this->value = (val--) + offset;
+	int val = (int)*this;
+	value = (val--) + offset;
 	return *this;
 }
 
 _p_int& _p_int::operator/(_p_int other) {
 	offset = rand() % offsetRange;
-	this->offset = offset;
-	this->value = (int)this / (int)other + offset;
+	value = (int)*this / (int)other + offset;
 	return *this;
 }
 
 _p_int& _p_int::operator/(int other) {
 	offset = rand() % offsetRange;
-	this->offset = offset;
-	this->value = (int)this / other + offset;
+	value = (int)*this / other + offset;
 	return *this;
 }
 
 _p_int& _p_int::operator*(_p_int other) {
 	offset = rand() % offsetRange;
-	this->offset = offset;
-	this->value = (int)this * (int)other + offset;
+	value = (int)*this * (int)other + offset;
 	return *this;
 }
 
 _p_int& _p_int::operator*(int other) {
 	offset = rand() % offsetRange;
-	this->offset = offset;
-	this->value = (int)this * other + offset;
+	value = (int)*this * other + offset;
 	return *this;
 }
 
 _p_int& _p_int::operator%(_p_int other) {
 	offset = rand() % offsetRange;
-	this->offset = offset;
-	this->value = (int)this % (int)other + offset;
+	value = (int)*this % (int)other + offset;
 	return *this;
 }
 
 _p_int& _p_int::operator%(int other) {
 	offset = rand() % offsetRange;
-	this->offset = offset;
-	this->value = (int)this % other + offset;
+	value = (int)*this % other + offset;
 	return *this;
 }
 
 bool _p_int::operator==(_p_int other) {
-	return (int)this == (int)other;
+	return (int)*this == (int)other;
 }
 
 bool _p_int::operator==(int other) {
-	return (int)this == other;
+	return (int)*this == other;
 }
 
 bool _p_int::operator!=(_p_int other) {
-	return (int)this != (int)other;
+	return (int)*this != (int)other;
 }
 
 bool _p_int::operator!=(int other) {
-	return (int)this != other;
+	return (int)*this != other;
 }
 
 bool _p_int::operator>(_p_int other) {
-	return (int)this > (int)other;
+	return (int)*this > (int)other;
 }
 
 bool _p_int::operator>(int other) {
-	return (int)this > other;
+	return (int)*this > other;
 }
 
 bool _p_int::operator<(_p_int other) {
-	return (int)this < (int)other;
+	return (int)*this < (int)other;
 }
 
 bool _p_int::operator<(int other) {
-	return (int)this < other;
+	return (int)*this < other;
 }
 
 bool _p_int::operator<=(_p_int other) {
-	return (int)this <= (int)other;
+	return (int)*this <= (int)other;
 }
 
 bool _p_int::operator<=(int other) {
-	return (int)this <= other;
+	return (int)*this <= other;
 }
 
 bool _p_int::operator>=(_p_int other) {
-	return (int)this >= (int)other;
+	return (int)*this >= (int)other;
 }
 
 bool _p_int::operator>=(int other) {
-	return (int)this >= other;
+	return (int)*this >= other;
 }
 
-#pragma endregion Operators
+#pragma endregion
