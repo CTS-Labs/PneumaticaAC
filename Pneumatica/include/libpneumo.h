@@ -6,3 +6,5 @@
 
 #include "_p_int.h"
 #include "_p_float.h"
+#include "_p_long.h"
+#include "_p_double.h"
