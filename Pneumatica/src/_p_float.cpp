@@ -65,6 +65,9 @@ _p_float& _p_float::operator+(float other) {
 
 _p_float& _p_float::operator++() {
 	offset = rand() % offsetRange;
+	float val = (float)*this;
+	value = (val++) + offset;
+	return *this;
 }
 
 _p_float& _p_float::operator-(_p_float other) {
@@ -81,6 +84,9 @@ _p_float& _p_float::operator-(float other) {
 
 _p_float& _p_float::operator--() {
 	offset = rand() % offsetRange;
+	float val = (float)*this;
+	value = (val--) + offset;
+	return *this;
 }
 
 _p_float& _p_float::operator/(_p_float other) {
