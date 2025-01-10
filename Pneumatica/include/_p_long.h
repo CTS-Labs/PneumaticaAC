@@ -14,56 +14,6 @@ public:
 
 	_p_long& operator=(long value);
 
-	_p_long& operator=(_p_long value);
-
-	_p_long& operator+(_p_long other);
-
-	_p_long& operator+(long other);
-
-	_p_long& operator++();
-
-	_p_long& operator-(_p_long other);
-
-	_p_long& operator-(long other);
-
-	_p_long& operator--();
-
-	_p_long& operator/(_p_long other);
-
-	_p_long& operator/(long other);
-
-	_p_long& operator*(_p_long other);
-
-	_p_long& operator*(long other);
-
-	_p_long& operator%(_p_long other);
-		
-	_p_long& operator%(long other);
-
-	bool operator==(_p_long other);
-
-	bool operator==(long other);
-
-	bool operator!=(_p_long other);
-
-	bool operator!=(long other);
-
-	bool operator>(_p_long other);
-
-	bool operator>(long other);
-
-	bool operator<(_p_long other);
-
-	bool operator<(long other);
-
-	bool operator>=(_p_long other);
-
-	bool operator>=(long other);
-
-	bool operator<=(_p_long other);
-
-	bool operator<=(long other);
-
 private:
 	long offset;
 	long value;
