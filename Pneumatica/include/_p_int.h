@@ -14,56 +14,6 @@ public:
 
 	_p_int& operator=(int value);
 
-	_p_int& operator=(_p_int value);
-
-	_p_int& operator+(_p_int other);
-
-	_p_int& operator+(int other);
-
-	_p_int& operator++();
-
-	_p_int& operator-(_p_int other);
-
-	_p_int& operator-(int other);
-
-	_p_int& operator--();
-
-	_p_int& operator/(_p_int other);
-
-	_p_int& operator/(int other);
-
-	_p_int& operator*(_p_int other);
-
-	_p_int& operator*(int other);
-
-	_p_int& operator%(_p_int other);
-		
-	_p_int& operator%(int other);
-
-	bool operator==(_p_int other);
-
-	bool operator==(int other);
-
-	bool operator!=(_p_int other);
-
-	bool operator!=(int other);
-
-	bool operator>(_p_int other);
-
-	bool operator>(int other);
-
-	bool operator<(_p_int other);
-
-	bool operator<(int other);
-
-	bool operator>=(_p_int other);
-
-	bool operator>=(int other);
-
-	bool operator<=(_p_int other);
-
-	bool operator<=(int other);
-
 private:
 	int offset;
 	int value;
