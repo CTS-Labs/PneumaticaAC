@@ -11,6 +11,10 @@ _p_int::_p_int(int value) {
 	this->value = value + offset;
 }
 
+_p_int::~_p_int() {
+	reset();
+}
+
 size_t _p_int::hash() const {
 	return std::hash<int>()(value) ^
 		(std::hash<int>()(offset) << 1);

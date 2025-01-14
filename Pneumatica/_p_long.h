@@ -5,6 +5,7 @@ struct PNEUMO_API _p_long
 {
 public:
 	_p_long(long value = 0);
+	~_p_long();
 
 	size_t hash() const;
 

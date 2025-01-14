@@ -3,7 +3,6 @@ namespace PneumoWorker;
 public class WorkerService : BackgroundService
 {
     private readonly ILogger<WorkerService> _logger;
-
     public WorkerService(ILogger<WorkerService> logger)
     {
         _logger = logger;

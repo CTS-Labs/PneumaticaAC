@@ -2,7 +2,7 @@
 
 #define PNEUMO_VERSION_MAJOR 1
 #define PNEUMO_VERSION_MINOR 0
-#define PNEUMO_VERSION_PATCH 2
+#define PNEUMO_VERSION_PATCH 3
 
 #include "_p_int.h"
 #include "_p_float.h"

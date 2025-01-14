@@ -1,16 +1,34 @@
+#define CURL_STATICLIB
+#include <curl/curl.h>
 #include "WorkerService.h"
 #include <Windows.h>
 #include <string>
 #include <thread>
 #include <functional>
 #include <iostream>
+#include <aixlog.hpp>
 
-std::thread workerThread;
+using namespace std;
+
+thread workerThread;
 PROCESS_INFORMATION wpi;
 
+WorkerService::WorkerService(void) {
+    AixLog::Log::init(
+        {
+            make_shared<AixLog::SinkCout>(AixLog::Severity::trace, "Pneumatica INFO: %Y-%m-%d %H-%M-%S.#ms [#severity] (#tag) #message"),
+            make_shared<AixLog::SinkCerr>(AixLog::Severity::error, "Pneumatica ERROR: %Y-%m-%d %H-%M-%S.#ms [#severity] (#tag)")
+        });
+}
+
+WorkerService::~WorkerService() {
+    stop();
+}
+
 void WorkerService::run() {
-    std::string command = "./PneumoWorker.exe";
-    workerThread = std::thread(&WorkerService::runService, this, std::wstring(command.begin(), command.end()).c_str());
+    LOG(INFO) << "Running the worker service \n";
+    string command = "./PneumoWorker.exe";
+    workerThread = thread(&WorkerService::runService, this, wstring(command.begin(), command.end()).c_str());
 }
 
 void WorkerService::stop() {
@@ -20,6 +38,7 @@ void WorkerService::stop() {
             CloseHandle(wpi.hProcess);
             CloseHandle(wpi.hThread);
         }
+        LOG(INFO) << "Stopping the worker service \n";
         workerThread.join();
     }
 }
@@ -38,6 +57,6 @@ void WorkerService::runService(LPCWSTR runCommand) {
     }
     else {
         DWORD error = GetLastError();
-        std::cerr << "CreateProcess failed with error code: " << error << std::endl;
+        cerr << "CreateProcess failed with error code: " << error << endl;
     }
 } 

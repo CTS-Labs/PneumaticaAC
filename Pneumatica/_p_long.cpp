@@ -11,6 +11,10 @@ _p_long::_p_long(long value) {
 	this->value = value + offset;
 }
 
+_p_long::~_p_long() {
+	reset();
+}
+
 size_t _p_long::hash() const {
 	return std::hash<long>()(value) ^
 		(std::hash<long>()(offset) << 1);

@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков\pneumo">
+      <UniqueIdentifier>{a46a73e6-2cab-4eaf-9535-f04baedff322}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\pneumo\SDK">
+      <UniqueIdentifier>{afb5d89e-667d-4dc1-88bd-d22e351c51c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\pneumo\SDK\types">
+      <UniqueIdentifier>{efb2d071-6053-4b08-b1d9-c842f6d024a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\thirdparty">
+      <UniqueIdentifier>{2fc9494f-b70d-4c30-b766-0dec87b39621}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\thirdparty\nlohmann">
+      <UniqueIdentifier>{d232469d-5627-4e8c-a034-45a175fd4963}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="libpneumo.h">
+      <Filter>Файлы заголовков\pneumo\SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="pneumatica.h">
+      <Filter>Файлы заголовков\pneumo\SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="_p_int.h">
+      <Filter>Файлы заголовков\pneumo\SDK\types</Filter>
+    </ClInclude>
+    <ClInclude Include="_p_float.h">
+      <Filter>Файлы заголовков\pneumo\SDK\types</Filter>
+    </ClInclude>
+    <ClInclude Include="_p_double.h">
+      <Filter>Файлы заголовков\pneumo\SDK\types</Filter>
+    </ClInclude>
+    <ClInclude Include="_p_long.h">
+      <Filter>Файлы заголовков\pneumo\SDK\types</Filter>
+    </ClInclude>
+    <ClInclude Include="json.hpp">
+      <Filter>Файлы заголовков\thirdparty\nlohmann</Filter>
+    </ClInclude>
+    <ClInclude Include="WorkerService.h">
+      <Filter>Файлы заголовков\pneumo\SDK</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="_p_int.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="_p_float.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="_p_double.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="_p_long.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="WorkerService.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vcpkg.json" />
+  </ItemGroup>
+</Project>
